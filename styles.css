@@ -36,12 +36,29 @@
 .step-connector {
     position: relative;
 }
-.step-connector:not(:last-child)::after {
-    content: '';
-    position: absolute;
-    top: 40px;
-    left: calc(50% + 40px);
-    width: calc(100% - 80px);
-    height: 1px;
-    background: linear-gradient(to right, #F1D592 0%, rgba(241, 213, 146, 0.1) 100%);
+
+@media (min-width: 768px) {
+    .step-connector:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        top: 40px;
+        left: calc(50% + 40px);
+        width: calc(100% - 80px);
+        height: 1px;
+        background: linear-gradient(to right, #F1D592 0%, rgba(241, 213, 146, 0.1) 100%);
+    }
+}
+
+@media (max-width: 767px) {
+    .step-connector:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 1px;
+        height: 48px;
+        margin-top: 8px;
+        background: linear-gradient(to bottom, #F1D592 0%, rgba(241, 213, 146, 0.0) 100%);
+    }
 }
